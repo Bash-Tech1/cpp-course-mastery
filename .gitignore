@@ -1,0 +1,8 @@
+# CLion build folders
+cmake-build-*/
+.idea/
+
+# Compiled files
+*.exe
+*.o
+*.out
