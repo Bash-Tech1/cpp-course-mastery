@@ -1,0 +1,96 @@
+When you don't understand a concept:
+    Explain this concept from first principles.
+
+    Start with the problem that motivated its existence.
+    Then explain how it works, why it works,
+    and when I should use it.
+
+    Give me examples and challenge my understanding
+    with a few questions.
+
+
+When you have a design question:
+    I have the following design problem.
+
+    Don't immediately give me the implementation.
+
+    Help me explore different approaches.
+    Explain the trade-offs, advantages, disadvantages,
+    and the reasoning behind choosing one approach.
+
+    Challenge my assumptions.
+
+
+When you finish a problem:
+    Review my solution as a senior C++ developer.
+
+    Don't rewrite my code immediately.
+
+    First evaluate:
+    1. Correctness.
+    2. Edge cases.
+    3. Logic.
+    4. Efficiency.
+    5. Readability.
+    6. Design quality.
+
+    Identify the most important improvements
+    and explain why they matter.
+
+When you make a mistake:
+    I made this mistake.
+
+    Explain the underlying misconception,
+    not just how to fix the code.
+
+    Give me a small exercise to verify
+    that I won't make the same mistake again.
+
+After completing the section:
+
+    We have completed the Functions section.
+
+    I want you to create a comprehensive README.md
+    documenting my entire learning journey in this section.
+
+    Review our conversation and extract:
+
+    1. Every important concept we discussed.
+    2. Questions I asked and their answers.
+    3. Explanations that helped me understand difficult topics.
+    4. Important distinctions and comparisons.
+    5. Mistakes and misconceptions I encountered.
+    6. Problems I solved and lessons learned.
+    7. Projects and their design decisions.
+    8. Coding principles and best practices.
+    9. Examples demonstrating important concepts.
+    10. Topics I should revise.
+
+    IMPORTANT:
+
+    - Preserve the actual technical depth of our discussions.
+    - Do not just produce a short summary.
+    - Do not invent questions, mistakes, or achievements.
+    - Organize the information into logical sections.
+    - Use correct C++ terminology.
+    - Include code examples where they add value.
+    - Avoid unnecessary repetition.
+    - Make it useful as a standalone reference
+    even without access to this conversation.
+
+    Output a complete Markdown README.md file.
+
+interview questions about a subject
+
+    I want to test my understanding of functions.
+
+    Act as an examiner.
+
+    Ask me questions one at a time.
+    Include conceptual questions, code tracing,
+    edge cases, and small implementation tasks.
+
+    Don't reveal the answers until I attempt them.
+
+    If my answer is incorrect, help me identify
+    the gap in my understanding.
