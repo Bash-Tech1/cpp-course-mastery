@@ -1,34 +1,36 @@
-# Hospital System (Console-Based Queue Management)
+# Hospital System
 
-A C++ console application that simulates a hospital management system. It handles patient registrations, priority queues based on medical urgency, and doctor consultations across multiple medical specializations.
+## Project Overview
+A console-based queue management system for a hospital. The system manages patient intakes and doctor pickups across 20 distinct medical specializations. It enforces strict queue limits and prioritizes urgent cases using foundational C++ array manipulation.
 
----
+## Architecture and Design Decisions
+To practice raw memory and array manipulation, this project strictly avoids structs, classes, and standard library containers (like `std::vector` or `std::queue`). 
 
-## Features
+State is maintained using **parallel arrays**:
+* `string names[20][5];`: A 2D array storing patient names (20 specializations, up to 5 patients each).
+* `int status[20][5];`: A 2D array storing patient urgency (0 = regular, 1 = urgent).
+* `int queue_lengths[20];`: A 1D array tracking the current number of patients waiting in each specialization.
 
-* **20 Specializations**: Supports up to 20 different medical departments (e.g., Children, Surgery, etc.).
-* **Capacity Limit**: Each specialization maintains a strict queue limit of a maximum of **5 available spots**.
-* **Priority Queueing**: 
-  * **Urgent patients (Status = 1)** are added to the **beginning** of the queue.
-  * **Regular patients (Status = 0)** are added to the **end** of the queue.
-* **Live Status Display**: Prints waiting patients categorized by their respective specializations.
-* **Doctor Pickup**: Allows doctors to call the next patient in line for a specific specialization, automatically removing them from the queue.
+**Queue Mechanics (Manual Shifting):**
+Because fixed arrays are used instead of dynamic queues, adding an urgent patient to the front (index 0) or removing a patient from the front (Doctor pickup) requires manually shifting all other elements right or left to prevent data overwriting or leaving empty gaps.
 
----
+## Features Implemented
+* **Add a Patient:** 
+  * Accepts specialization [1-20], name, and urgency status.
+  * Rejects addition if the specialization queue is full (5 patients).
+  * Appends regular patients to the end of the queue.
+  * Inserts urgent patients at the beginning of the queue by shifting existing patients right.
+* **Print Patients:** Iterates through the 20 specializations and prints the waiting line. Skips specializations that have 0 patients.
+* **Doctor Pickup:** Removes the first patient in the specified specialization's queue and shifts the remaining patients left to close the gap. Informs the doctor if the queue is already empty.
 
-## How It Works / Menu Options
+## Requirements
+* C++11 or higher
+* Core libraries: `<iostream>`, `<string>`
 
-When you run the program, you will be presented with a menu of choices:
+## Build and Run Instructions
+```bash
+# Compile the project
+g++ -std=c++17 -Wall -Wextra main.cpp -o hospital_system
 
-1. **Add new patient**: 
-   * Enter the specialization number (`1` to `20`).
-   * Enter the patient's name and status (`0` for regular, `1` for urgent).
-   * *Note:* If the department already has 5 patients, the system will apologize and reject the addition.
-2. **Print all patients**: Displays all waiting patients across all active specializations.
-3. **Get next patient (Doctor pickup)**: 
-   * Enter the specialization number. 
-   * If no patients are waiting, the system informs the doctor. Otherwise, it calls the patient forward and removes them from the queue.
-4. **Exit**: Closes the application.
-
----
-
+# Run the executable
+./hospital_system
