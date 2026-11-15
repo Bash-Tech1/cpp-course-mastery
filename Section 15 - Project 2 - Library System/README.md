@@ -31,20 +31,18 @@ A console-based **library management system** written in modern C++ (C++20). An 
 
 ### Build and Run
 
-> [!NOTE]
-> The source file is currently named `hospital.cpp` (probably copied from Section 13). Renaming it to `library.cpp` would make the folder clearer. If you do, change the commands below to match.
 
 **GCC / Clang**
 
 ```bash
-g++ -std=c++20 -Wall -Wextra -O2 hospital.cpp -o library
+g++ -std=c++20 -Wall -Wextra -O2 library.cpp -o library
 ./library
 ```
 
 **MSVC (Developer Command Prompt)**
 
 ```bat
-cl /std:c++20 /EHsc /W4 hospital.cpp /Fe:library.exe
+cl /std:c++20 /EHsc /W4 library.cpp /Fe:library.exe
 library.exe
 ```
 
